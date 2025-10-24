@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -1126,6 +1127,15 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([ True,  True,  True,  True,  True,  True,  True,  True,  True,\n        True,  True,  True])", ((data >= 50) | (data < 100)).repr);
             Console.WriteLine(((data >= 50) ^ (data < 100)).repr);
             Assert.AreEqual("array([ True,  True,  True,  True, False, False, False, False, False,\n        True,  True,  True])", ((data >= 50) ^ (data < 100)).repr);
+        }
+
+        [TestMethod]
+        public void IssueByElinLiu0()
+        {
+            var x = np.array(new float[,] { { 1.1f, 2.2f }, { 3.141596f, 4.4f } });
+            var y = string.Join(',', x.GetData<float>().Select(z => z.ToString(CultureInfo.InvariantCulture)));
+            Console.WriteLine("Proof: " + y);
+            Assert.AreEqual("1.1,2.2,3.141596,4.4", y);
         }
     }
 
