@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
     <RootNamespace>Numpy</RootNamespace>
     <AssemblyName>Numpy</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -38,7 +39,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0"></PackageReference>
-    <PackageReference Include="Python.Included" Version="3.11.1"></PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Python.Included Fork（HyperNexoraX/Python.Included nexorax 分支） -->
+    <ProjectReference Include="..\..\..\..\Python.Included\Python.Included\Python.Included.csproj" />
   </ItemGroup>
 
 </Project>
