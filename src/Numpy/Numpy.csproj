@@ -43,7 +43,8 @@
 
   <ItemGroup>
     <!-- Python.Included Fork（HyperNexoraX/Python.Included nexorax 分支） -->
-    <ProjectReference Include="..\..\..\..\Python.Included\Python.Included\Python.Included.csproj" />
+    <!-- 路徑對應 NexoraX 的 extern/ 結構（Numpy 與 Python.Included 同在 extern/ 下） -->
+    <ProjectReference Include="..\..\..\Python.Included\Python.Included\Python.Included.csproj" />
   </ItemGroup>
 
 </Project>
